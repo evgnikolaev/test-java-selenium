@@ -29,6 +29,5 @@ public class a7_Radio {
         checkbox1.click();
         System.out.println(checkbox1.isSelected()); // Проверим выбран или нет
 
-        //47
     }
 }

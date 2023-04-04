@@ -64,7 +64,7 @@ public class a1_XPath {
 
      contains() - содержит ли
      //li[contains(@class,'mw-list-item')]
-     //h1[conains(text(),'How people')]
+     //h1[contains(text(),'How people')]
 
      start-with() - начинается ли
      //input[startt-with(@title,''Go to)]
