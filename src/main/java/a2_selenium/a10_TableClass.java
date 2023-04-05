@@ -89,9 +89,4 @@ public class a10_TableClass {
         return cell.getText();
 
     }
-
-
-    // 50
-
-
 }
