@@ -9,16 +9,16 @@ public class a2_Webdriver {
     public static void main(String[] args) {
 
         /*
-        https://www.selenium.dev/documentation/webdriver/getting_started/
+       https://www.selenium.dev/documentation/webdriver/getting_started/
         1) Создаем maven проект.
 
-        2) Ставим  в pom.xml зависимость:
+        2) Ставим в pom.xml (конфигурационный файл maven-а) зависимость:
 
           <dependencies>
-             <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
                     <artifactId>selenium-java</artifactId>
-                    <version>3.141.59</version>
+                    <version>4.10.0</version>
                 </dependency>
             </dependencies>
 
@@ -27,11 +27,18 @@ public class a2_Webdriver {
         https://chromedriver.chromium.org/downloads
 
 
+                Здесь про установку хорошо обясняют:
+                https://www.youtube.com/watch?v=Yg9KdvAbEHg&list=PLzf74dZga1fQ5Hw7xk1B3dRso0nu-F4dg&ab_channel=LookLiveQA
+                https://mvnrepository.com/
 
 
-        Здесь про установку хорошо обясняют:
-        https://www.youtube.com/watch?v=Yg9KdvAbEHg&list=PLzf74dZga1fQ5Hw7xk1B3dRso0nu-F4dg&ab_channel=LookLiveQA
-        https://mvnrepository.com/
+        4) Пользуемся конструкцией:
+
+            System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://www.google.ru/");
+
+
         */
 
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
