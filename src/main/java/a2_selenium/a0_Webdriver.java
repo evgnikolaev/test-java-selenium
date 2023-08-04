@@ -34,6 +34,13 @@ public class a0_Webdriver {
 
 
 
+
+            driver:
+                ChromeDriver / FirefoxDriver / EdgeDriver
+                PhantomJSDriver (без запуска браузера)
+
+
+
             driver.get();
             driver.getTitle()
             driver.getCurrentUrl()
@@ -88,18 +95,27 @@ public class a0_Webdriver {
                     .getText()
                     .click()
                     .submit()
-                    .isEnabled()
-                    .isDisplayed()
+                        .isEnabled()
+                        .isDisplayed()
+
 
             WebElement input
-                    .sendKeys()
                     .getAttribute("value")
                     .clear()
+                    .sendKeys()
+                    input.sendKeys(Keys.chord(Keys.SHIFT, "test Keys"));
+                            Keys.ENTER
+                            Keys.chord(Keys.CONTROL, "a")
+
+
+            WebElement input[@type='file']
+                    .sendKeys("C:\\test.png")
+
 
 
             WebElement checkbox, radio
                     .click()
-                    .isSelected()
+                        .isSelected()
 
 
             WebElement select (можно на селект кликнуть потом на опцию, можно сразу на опцию)
@@ -160,7 +176,7 @@ public class a0_Webdriver {
             Actions actions = new Actions(driver);
 
             actions
-                .moveToElement(link)            - навести на элемент
+                .moveToElement(element)         - навести на элемент
                 .dragAndDrop(element, link)     - перенести один элемент на другой
                 .doubleClick(element)           - двойной клик
                 .contextClick(element)          - клик правой кнопкой мыши
@@ -209,6 +225,47 @@ public class a0_Webdriver {
 
 
 
+            Date dateNow = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("hh-mm-ss");
+            String fileName = format.format(dateNow) + ".jpg";
+
+            // скриншоты
+            File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screen, new File("C:\\Users\\e.nikolaev\\Downloads\\" + fileName));   - pom.xml ставим пакет
+
+
+
+
+
+
+         -------------------------------------------
+
+
+
+
+             JUnit:
+                @BeforeClass - в самом начале один раз перед всеми методами
+                @AfterClass - в самом конце один раз после всех методов
+                @Before - перед каждым тестовым методом
+                @After - после каждоого тестового метода
+                @Test - позволяет указать на тестовый метод
+                @Ignore - не выполнять тестовый метод
+
+
+
+            Assert:
+            .assertTrue(1 + 1 == 2) - проверка на true
+            .assertFalse(1 + 1 == 10)- проверка на false
+
+            .assertNull() - проверка на Null
+            .assertNotNull() - проверка на Null
+
+            .assertEquals(10, 5 + 5) - проверка на сравнение
+            .assertNotEquals(10, 5 + 5) - проверка на сравнение
+
+
+            .assertTrue("Метод провалился",1 + 1 == 12) - Можно 1-м параметром передавать сообщение при провале теста
+            Тесты могут выполняться в любом порядке, они должны быть независимые.
 
 
 

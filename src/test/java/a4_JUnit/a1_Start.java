@@ -22,7 +22,7 @@ public class a1_Start {
             tearDown()
 
             setUp()
-            method1()
+            method2()
             tearDown()
 
             afterClassMethod()
